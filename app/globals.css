@@ -1,0 +1,349 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-display: 'Outfit', system-ui, sans-serif;
+    --font-artistic: 'Cinzel', serif;
+  }
+
+  * {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-slate-950 via-purple-950/50 to-slate-950 text-white;
+    background-attachment: fixed;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+    line-height: 1.7;
+    touch-action: manipulation; /* Better touch responsiveness */
+  }
+  
+  @media (min-width: 640px) {
+    body {
+      font-size: 19px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    body {
+      font-size: 20px;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Modern 2026 Typography Scale */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+    font-feature-settings: "liga" 1, "kern" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Better text rendering */
+  p, span, a, li {
+    @apply font-sans;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Elegant gradient text with refined colors - 2026 Style */
+  .gradient-text {
+    @apply bg-gradient-to-r from-rose-300 via-purple-300 to-pink-300 bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: gradient 12s ease infinite;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    font-family: var(--font-display);
+  }
+
+  .gradient-text-subtle {
+    @apply bg-gradient-to-r from-purple-200/90 via-pink-200/90 to-purple-200/90 bg-clip-text text-transparent;
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+
+  /* Clean Artistic Display Text */
+  .signature-text-simple {
+    font-family: var(--font-artistic);
+    background: linear-gradient(135deg, #fda4af 0%, #e879f9 50%, #ec4899 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: signatureGradient 8s ease infinite;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  @keyframes signatureGradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Refined glassmorphism */
+  .glass-effect {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-effect-strong {
+    @apply backdrop-blur-2xl bg-white/10 border border-white/20;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  /* Elegant card hover with subtle effects */
+  .card-hover {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply scale-[1.02] shadow-2xl;
+    box-shadow: 0 20px 60px -15px rgba(168, 85, 247, 0.3);
+  }
+
+  /* Elegant button styles - 2026 Modern */
+  .btn-elegant {
+    @apply relative px-10 py-4 rounded-full font-semibold text-lg sm:text-xl;
+    @apply bg-gradient-to-r from-rose-500/90 via-purple-600/90 to-pink-600/90;
+    @apply text-white shadow-lg shadow-purple-500/30;
+    @apply transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)];
+    @apply hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-[1.02];
+    @apply active:scale-[0.98];
+    @apply font-display tracking-wide;
+    @apply cursor-pointer;
+    letter-spacing: 0.05em;
+    z-index: 100;
+    pointer-events: auto;
+    position: relative;
+  }
+
+  .btn-elegant::before {
+    content: '';
+    @apply absolute inset-0 rounded-full;
+    @apply bg-gradient-to-r from-rose-400 via-purple-500 to-pink-500;
+    @apply opacity-0 transition-opacity duration-500;
+    @apply -z-10 blur-2xl;
+  }
+
+  .btn-elegant:hover::before {
+    @apply opacity-40;
+  }
+
+  /* Modern 2026 Interactive Elements */
+  .interactive-element {
+    @apply transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)];
+    @apply cursor-pointer;
+  }
+
+  .interactive-element:hover {
+    @apply transform-gpu;
+  }
+
+  /* Elegant section spacing - 2026 Modern */
+  .section-elegant {
+    @apply py-32 md:py-40 lg:py-48;
+    @apply relative;
+  }
+
+  /* Modern container with better spacing */
+  .container-modern {
+    @apply mx-auto px-6 sm:px-8 lg:px-12 xl:px-16;
+    max-width: 1440px;
+  }
+
+  /* Refined animations */
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes float-elegant {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    33% {
+      transform: translateY(-10px) translateX(5px);
+    }
+    66% {
+      transform: translateY(5px) translateX(-5px);
+    }
+  }
+
+  .animate-float-elegant {
+    animation: float-elegant 8s ease-in-out infinite;
+  }
+
+  /* Video optimization */
+  video {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+
+  /* Elegant divider - 2026 Style */
+  .divider-elegant {
+    @apply h-px bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    @apply w-full;
+  }
+
+  .divider-elegant-vertical {
+    @apply w-px h-full bg-gradient-to-b from-transparent via-white/20 to-transparent;
+  }
+
+  /* Modern 2026 Card Styles */
+  .card-modern {
+    @apply glass-effect rounded-3xl p-8;
+    @apply transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)];
+    @apply hover:scale-[1.02] hover:shadow-2xl;
+    @apply border border-white/10;
+  }
+
+  /* Better focus states for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-4 outline-purple-400/50 rounded;
+  }
+
+  /* Smooth scroll snap for sections */
+  .scroll-snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  /* Modern text selection */
+  ::selection {
+    @apply bg-purple-500/30 text-white;
+  }
+
+  ::-moz-selection {
+    @apply bg-purple-500/30 text-white;
+  }
+
+  /* Modern 2026 Scrollbar Design */
+  /* Webkit browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.7) 0%, rgba(236, 72, 153, 0.7) 50%, rgba(251, 146, 60, 0.7) 100%);
+    border-radius: 12px;
+    border: 2px solid rgba(15, 23, 42, 0.4);
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 2px 8px rgba(168, 85, 247, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.95) 0%, rgba(236, 72, 153, 0.95) 50%, rgba(251, 146, 60, 0.95) 100%);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 16px rgba(168, 85, 247, 0.5), 0 0 20px rgba(236, 72, 153, 0.3);
+    transform: scale(1.05);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 1) 0%, rgba(236, 72, 153, 1) 50%, rgba(251, 146, 60, 1) 100%);
+    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.7), 0 0 30px rgba(236, 72, 153, 0.5);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: rgba(15, 23, 42, 0.4);
+    border-radius: 12px;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(168, 85, 247, 0.7) rgba(15, 23, 42, 0.4);
+  }
+
+  /* Smooth scrollbar animation */
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  /* Custom scrollbar for specific containers (modals, dropdowns) */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 10px;
+    margin: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.6) 0%, rgba(236, 72, 153, 0.6) 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(15, 23, 42, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.9) 0%, rgba(236, 72, 153, 0.9) 100%);
+    box-shadow: 0 2px 8px rgba(168, 85, 247, 0.4);
+  }
+
+  /* Thin scrollbar variant */
+  .thin-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.5) 0%, rgba(236, 72, 153, 0.5) 100%);
+    border-radius: 6px;
+  }
+
+  .thin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.8) 0%, rgba(236, 72, 153, 0.8) 100%);
+  }
+}
+
