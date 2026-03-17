@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 
@@ -15,28 +14,22 @@ interface BreadcrumbsProps {
 
 export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
-    <nav className="mb-6 sm:mb-8" aria-label="Breadcrumb">
-      <ol className="flex items-center space-x-2 sm:space-x-3 text-sm sm:text-base">
+    <nav aria-label="Breadcrumb">
+      <ol className="flex items-center gap-1.5 text-xs">
         <li>
-          <Link
-            href="/"
-            className="flex items-center text-white/60 hover:text-white transition-colors duration-300"
-          >
-            <Home className="w-4 h-4 sm:w-5 sm:h-5" />
+          <Link href="/" className="text-cream/35 hover:text-cream/60 transition-colors duration-300">
+            <Home className="w-3.5 h-3.5" />
           </Link>
         </li>
         {items.map((item, index) => (
-          <li key={index} className="flex items-center">
-            <ChevronRight className="w-4 h-4 text-white/40 mx-2" />
+          <li key={index} className="flex items-center gap-1.5">
+            <ChevronRight className="w-3 h-3 text-cream/20" />
             {item.href ? (
-              <Link
-                href={item.href}
-                className="text-white/60 hover:text-white transition-colors duration-300 font-display"
-              >
+              <Link href={item.href} className="text-cream/35 hover:text-cream/60 transition-colors duration-300 font-medium">
                 {item.label}
               </Link>
             ) : (
-              <span className="text-white font-display">{item.label}</span>
+              <span className="text-cream/70 font-medium">{item.label}</span>
             )}
           </li>
         ))}
@@ -44,4 +37,3 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
     </nav>
   );
 }
-
