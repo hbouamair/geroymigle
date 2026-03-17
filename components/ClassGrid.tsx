@@ -31,7 +31,7 @@ export default function ClassGrid() {
           className="mb-16 md:mb-20"
         >
           <div className="max-w-3xl">
-            <h2 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.05] mb-5">
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-[1.05] mb-5">
               <span className="text-cream">Choose your</span>
               <br />
               <span className="gradient-text">learning path</span>

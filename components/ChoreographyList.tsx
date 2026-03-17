@@ -61,7 +61,7 @@ export default function ChoreographyList() {
             <Music className="w-6 h-6 text-gold/60" />
             <span className="tag">Choreographies</span>
           </div>
-          <h2 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight gradient-text mb-4">
+          <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight gradient-text mb-4">
             Choreographies
           </h2>
           <p className="text-base text-cream/45 max-w-xl">

@@ -32,7 +32,7 @@ export default function ContactPage() {
             className="text-center mb-14 md:mb-20"
           >
             <Send className="w-7 h-7 text-gold/50 mx-auto mb-4" />
-            <h1 className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl tracking-tight gradient-text mb-4">
+            <h1 className="font-display font-extrabold text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl tracking-tight gradient-text mb-4">
               Contact Us
             </h1>
             <p className="text-lg text-cream/45 max-w-xl mx-auto">

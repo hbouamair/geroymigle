@@ -67,7 +67,7 @@ export default function Methodology() {
         >
           <div className="max-w-3xl">
             <span className="tag mb-6 inline-block">Methodology</span>
-            <h2 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.05] mb-5">
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-[1.05] mb-5">
               <span className="text-cream">This is what</span>
               <br />
               <span className="gradient-text">we have for you</span>

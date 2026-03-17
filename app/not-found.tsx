@@ -16,7 +16,7 @@ export default function NotFound() {
 
         <div className="container-tight relative z-10 text-center py-20">
           <div className="max-w-xl mx-auto">
-            <h1 className="font-display font-extrabold text-[8rem] sm:text-[10rem] md:text-[12rem] leading-none gradient-text mb-4">
+            <h1 className="font-display font-extrabold text-[6rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem] leading-none gradient-text mb-4">
               404
             </h1>
             <h2 className="font-display font-bold text-2xl md:text-3xl text-cream mb-4">

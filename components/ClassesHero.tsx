@@ -17,10 +17,10 @@ export default function ClassesHero() {
           className="max-w-3xl"
         >
           <span className="tag mb-6 inline-block">Classes</span>
-          <h1 className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mb-6">
+          <h1 className="font-display font-extrabold text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight leading-[0.95] mb-4 sm:mb-6">
             <span className="gradient-text">Classes</span>
           </h1>
-          <p className="text-lg sm:text-xl text-cream/50 max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-cream/50 max-w-2xl leading-relaxed">
             Choose from our comprehensive selection of bachata classes designed to take your dancing to the next level.
           </p>
         </motion.div>
@@ -30,16 +30,16 @@ export default function ClassesHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="flex items-center gap-8 mt-10"
+          className="flex flex-wrap items-center gap-x-6 gap-y-2 sm:gap-x-8 mt-8 sm:mt-10"
         >
           {[
             { value: "6", label: "Class Types" },
             { value: "24/7", label: "Access" },
             { value: "All", label: "Levels" },
           ].map((stat) => (
-            <div key={stat.label} className="flex items-baseline gap-2">
-              <span className="font-display font-bold text-2xl text-cream">{stat.value}</span>
-              <span className="text-xs text-cream/40 uppercase tracking-wider">{stat.label}</span>
+            <div key={stat.label} className="flex items-baseline gap-1.5 sm:gap-2">
+              <span className="font-display font-bold text-lg sm:text-xl md:text-2xl text-cream">{stat.value}</span>
+              <span className="text-[10px] sm:text-xs text-cream/40 uppercase tracking-wider">{stat.label}</span>
             </div>
           ))}
         </motion.div>

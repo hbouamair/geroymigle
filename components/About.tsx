@@ -72,7 +72,7 @@ export default function About() {
           >
             <div>
               <span className="tag mb-5 inline-block">About Us</span>
-              <h2 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.05] mb-6">
+              <h2 className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.05] mb-6">
                 <span className="text-cream">Who</span>{" "}
                 <span className="gradient-text">we are</span>
               </h2>
@@ -105,15 +105,15 @@ export default function About() {
             </div>
 
             {/* Mini Stats */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
               {[
                 { value: "10+", label: "Years Experience" },
                 { value: "5000+", label: "Students" },
                 { value: "50+", label: "Countries" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="font-display font-bold text-2xl md:text-3xl gradient-text">{stat.value}</div>
-                  <div className="text-xs text-cream/40 mt-1">{stat.label}</div>
+                  <div className="font-display font-bold text-xl sm:text-2xl md:text-3xl gradient-text">{stat.value}</div>
+                  <div className="text-[10px] sm:text-xs text-cream/40 mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>

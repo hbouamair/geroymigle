@@ -97,13 +97,13 @@ export default function ClassDetailPage({ classItem }: ClassDetailPageProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[0.95]"
+              className="font-display font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-[0.95]"
             >
               <span className="gradient-text">
                 {classItem.title.split("|")[0].trim()}
               </span>
               {classItem.title.includes("|") && (
-                <span className="block text-2xl sm:text-3xl text-cream/40 font-light mt-2">
+                <span className="block text-lg sm:text-2xl md:text-3xl text-cream/40 font-light mt-2">
                   {classItem.title.split("|")[1].trim()}
                 </span>
               )}
@@ -123,17 +123,17 @@ export default function ClassDetailPage({ classItem }: ClassDetailPageProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="grid grid-cols-3 gap-3"
+              className="grid grid-cols-3 gap-2 sm:gap-3"
             >
               {[
                 { icon: Clock, label: "24/7", sublabel: "Access" },
                 { icon: Star, label: "5.0", sublabel: "Rating" },
                 { icon: Award, label: "100+", sublabel: "Students" },
               ].map((stat, index) => (
-                <div key={index} className="glass-card rounded-xl p-4 text-center">
-                  <stat.icon className="w-5 h-5 mx-auto mb-1.5 text-gold/60" />
-                  <div className="font-display font-bold text-lg text-cream">{stat.label}</div>
-                  <div className="text-xs text-cream/35">{stat.sublabel}</div>
+                <div key={index} className="glass-card rounded-xl p-3 sm:p-4 text-center">
+                  <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 sm:mb-1.5 text-gold/60" />
+                  <div className="font-display font-bold text-base sm:text-lg text-cream">{stat.label}</div>
+                  <div className="text-[10px] sm:text-xs text-cream/35">{stat.sublabel}</div>
                 </div>
               ))}
             </motion.div>

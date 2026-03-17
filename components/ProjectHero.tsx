@@ -21,7 +21,7 @@ export default function ProjectHero({ onOpenForm }: ProjectHeroProps) {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="tag mb-6 inline-block">Project</span>
-            <h1 className="font-display font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] mb-6">
+            <h1 className="font-display font-extrabold text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight leading-[0.95] mb-4 sm:mb-6">
               <span className="gradient-text">G&M Project</span>
             </h1>
           </motion.div>

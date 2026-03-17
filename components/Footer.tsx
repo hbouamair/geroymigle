@@ -46,7 +46,7 @@ export default function Footer() {
             <p className="text-cream/40 text-sm leading-relaxed max-w-xs mb-6">
               Become the best bachata social dancer with structured programs and expert guidance.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
